@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900');
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+English');
+main{display:block;}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+html {
+	background: #1d2121;
+}
+#foobar { display: none }
+body {
+	font-family: sans-serif;
+	min-height: 100vh;
+	color: #57585c;
+	color: #fff;
+	background-color: #fff;
+	background-color: #000;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.content {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	min-height: 100vh;
+}
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.content-title,
+.content-text {
+	animation-name: glitch-anim-text;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.content-title {
+	bottom: 0;
+	 
+	height:418px;
+	position: absolute;
+	width: 600px;
+	font-family: 'Playfair Display', serif;
+	 
+	background: url("./ddigoez-6e00cf4e-6c39-4691-8152-ab8ae8b18783-removebg-preview.png") no-repeat;
+}
+
+.content-text {
+	font-family: 'IM Fell English', serif;
+	position: absolute;
+	font-size: 1.5em;
+	top: 4em;
+	right: 10vw;
+	max-width: 500px;
+	text-align: right;
+	font-weight: 400;
+	animation-delay: calc(2s + 4s * 0.25);
+}
+
+@media screen and (max-width: 55em) {
+	.content-text {
+		position: relative;
+		right: auto;
+		top: auto;
+		font-size: 1.25em;
+		padding: 0 1em;
+		text-align: center;
+	}
+}
+
+/* Glitch styles */
+.glitch {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.glitch-img {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	width: calc(100% + 10px * 2);
+	height: calc(100% + 5px * 2);
+	background: url(./IMG_20230318_101408537_HDR.jpg) no-repeat 50% 0;
+	background-color: transparent;
+	background-size: cover;
+	transform: translate3d(0,0,0);
+	background-blend-mode: none;
+}
+
+.glitch-img:nth-child(n+2) {
+	opacity: 0;
+}
+
+.glitch-img:nth-child(n+2) {
+	animation-duration: 4s;
+	animation-delay: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+.glitch-img:nth-child(2) {
+	background-color: transparent;
+	background-blend-mode: none;
+	animation-name: glitch-anim-1;
+}
+
+.glitch-img:nth-child(3) {
+	background-color: transparent;
+	background-blend-mode: none;
+	animation-name: glitch-anim-2;
+}
+
+.glitch-img:nth-child(4) {
+	background-color: transparent;
+	background-blend-mode: none;
+	animation-name: glitch-anim-3;
+}
+
+.glitch-img:nth-child(5) {
+	background-color: #862a2a;
+	background-blend-mode: overlay;
+	animation-name: glitch-anim-flash;
+}
+
+@media screen and (max-width: 55em) {
+	.content {
+		flex-direction: column;
+		height: auto;
+		min-height: 0;
+	}
+}
+
+ 

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900');
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+English');
+main{display:block;}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+html {
+	background: #1d2121;
+}
+
+body {
+	font-family: sans-serif;
+	min-height: 100vh;
+	color: #57585c;
+	color: #fff;
+	background-color: #fff;
+	background-color: #000;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.content {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	min-height: 100vh;
+}
+
+.content-title,
+.content-text {
+	animation-name: glitch-anim-text;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.content-title {
+	bottom: 0;
+	 
+	height:418px;
+	position: absolute;
+	width: 600px;
+	font-family: 'Playfair Display', serif;
+	 
+	background: url("./TourPhoto2022SMALL-removebg-preview.png") no-repeat;
+}
+
+.content-text {
+	font-family: 'IM Fell English', serif;
+	position: absolute;
+	font-size: 1.5em;
+	top: 4em;
+	right: 10vw;
+	max-width: 500px;
+	text-align: right;
+	font-weight: 400;
+	animation-delay: calc(2s + 4s * 0.25);
+}
+
+@media screen and (max-width: 55em) {
+	.content-text {
+		position: relative;
+		right: auto;
+		top: auto;
+		font-size: 1.25em;
+		padding: 0 1em;
+		text-align: center;
+	}
+}
+
+ 
+.glitch-img {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	width: calc(100% + 10px * 2);
+	height: calc(100% + 5px * 2);
+	background: url("../mysteriouse/24manguel-superJumbo.jpg") no-repeat 50% 0;
+	background-color: transparent;
+	background-size: cover;
+	transform: translate3d(0,0,0);
+	background-blend-mode: none;
+}
+
+ 
+
+@media screen and (max-width: 55em) {
+	.content {
+		flex-direction: column;
+		height: auto;
+		min-height: 0;
+	}
+}
+
+/* Animations */
+ 
